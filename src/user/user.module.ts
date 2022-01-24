@@ -9,12 +9,14 @@ import { UserSchema } from './schema/user.schema';
   controllers: [UserController],
   providers: [UserService],
   imports: [
-    MongooseModule.forFeatureAsync([{
-      name: USER.name,
-      useFactory: () => {
-        return UserSchema;
-      }
-    }])
-  ]
+    MongooseModule.forFeatureAsync([
+      {
+        name: USER.name,
+        useFactory: () => {
+          return UserSchema;
+        },
+      },
+    ]),
+  ],
 })
 export class UserModule {}
